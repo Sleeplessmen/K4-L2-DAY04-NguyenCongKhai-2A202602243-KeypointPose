@@ -101,7 +101,11 @@ Không chỉ ghi “cẩn thận hơn khi gán”. -->
 
 3. Một ảnh test model đoán sai - gọi tên lỗi theo bốn loại của slide 43 (lệch nhẹ / đảo trái/phải / nhầm người / trượt hẳn):
 
-4. Ảnh nào có OKS thấp nhất giữa nhãn của bạn và model? Ai đúng, và bạn dựa vào đâu?
+- Ảnh model đoán sai tiêu biểu: test_02.jpg
+- Tên loại lỗi: Nhầm người (False Positive).
+- Trong ảnh test_02.jpg, mô hình đã nhận diện nhầm một vật thể ở phía bên trái (không phải là người) nhưng vẫn gán skeleton hoàn chỉnh vào đó. Đây chính là lỗi nhầm người (False Positive) theo định nghĩa phân loại lỗi từ bài học.
+
+1. Ảnh nào có OKS thấp nhất giữa nhãn của bạn và model? Ai đúng, và bạn dựa vào đâu?
 
 - Ảnh có OKS thấp nhất: train_06 với chỉ số OKS chỉ đạt 0.639.
 - Thông thường, nhãn của tôi (con người) sẽ đúng (hoặc gần đúng nhất sau khi đã qua cổng Gold duyệt lỗi). Tôi dựa vào cấu trúc giải phẫu học thực tế của cơ thể người trên ảnh để xác định rõ khớp trái/phải và vị trí bị che khuất, trong khi model dễ bị đánh lừa bởi góc chụp hoặc quần áo trùng màu nền dẫn tới đoán lệch vị trí hoặc đảo lộn bộ phận.
