@@ -1,4 +1,4 @@
-# Mini guideline - nhóm: ______  |  người gán: ______  |  ngày: ______
+# Mini guideline - nhóm: solo | người gán: Nguyễn Công Khải | ngày: 16-09-2026
 
 > Điền file này **trong lúc** gán nhãn, không phải sau khi xong. Mỗi lần bạn dừng lại
 > hơn 10 giây để phân vân, đó là một dòng phải ghi vào đây.
@@ -14,14 +14,14 @@
 
 ## 2. Luật của nhóm bạn (phải điền)
 
-| Tình huống | Luật nhóm bạn chọn | Vì sao |
-| --- | --- | --- |
-| Hông của người mặc quần áo dài | | |
-| Tai bị tóc hoặc mũ bảo hiểm che một phần | | |
-| Người bị cắt ở mép ảnh (chỉ thấy từ hông trở lên) | | |
-| Cổ tay nằm sau tay lái / sau thân mình | | |
-| Hai người chồng lên nhau | | |
-| Người nhỏ đến mức nào thì không gán nữa | | |
+| Tình huống                                        | Luật nhóm bạn chọn                                                                                                                        | Vì sao                                                                                                                               | Ảnh minh họa |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
+| Hông của người mặc quần áo dài                    | v = 1, đặt chấm ước lượng                                                                                                                 | Bị che bởi vật (quần áo) nhưng vẫn trong khung ảnh thì áp dụng rule v = 1 (bị che, còn trong khung).                                 |
+| Tai bị tóc hoặc mũ bảo hiểm che một phần          | v = 1, đặt chấm ước lượng                                                                                                                 | Che một phần vẫn được xem là "bị che" thì v = 1 (không dùng v = 0 vì keypoint vẫn trong khung).                                      |
+| Người bị cắt ở mép ảnh (chỉ thấy từ hông trở lên) | Keypoint dưới hông (đùi, đầu gối, mắt cá): v = 0 (không đặt chấm). Keypoint từ hông trở lên: v = 1 (nếu bị che) hoặc v = 2 (nếu nhìn thấy | Áp dụng rule: ra ngoài mép thì v = 0. Nếu keypoint không xuất hiện trong khung (ví dụ: mắt cá chân bị cắt mất), không đặt chấm.      |
+| Cổ tay nằm sau tay lái / sau thân mình            | v = 1, đặt chấm ước lượng                                                                                                                 | Bị che bởi vật/phần cơ thể khác nhưng vẫn trong khung thì v = 1.                                                                     |
+| Hai người chồng lên nhau                          | Keypoint bị che bởi người khác: v = 1. Keypoint không bị che: v = 2                                                                       | Áp dụng rule bị che: nếu keypoint vẫn trong khung nhưng bị đối tượng khác chặn thì v = 1.                                            |
+| Người nhỏ đến mức nào thì không gán nữa           | Ngưỡng: chiều cao bounding box < 20px thì bỏ qua (không gán 17 điểm). Từ 20px trở lên: gán đủ 17 điểm (dù v = 0/1/2)                      | Tham khảo COCO: keypoint quá nhỏ (dưới ~10-20px) không đáng tin cậy cho model. Lưu ý: không xóa điểm, chỉ không gán nếu dưới ngưỡng. |
 
 Với mỗi luật, chèn **một ảnh mẫu** (screenshot từ CVAT) thay vì chỉ viết một câu.
 Slide 12 nói rõ: khớp không có bề mặt nhìn thấy được thì phải có ảnh mẫu, không phải
@@ -29,26 +29,27 @@ một câu văn chung chung.
 
 ## 3. Ba ca mơ hồ đã gặp (bắt buộc, ghi ít nhất 3)
 
-### Ca 1 - ảnh `______`, người thứ `___`, khớp `______`
+### Ca 1 - ảnh `, người có ID = `, khớp `và`
 
 - Mơ hồ ở chỗ nào:
 - Bạn quyết thế nào:
 - Vì sao:
 - Nếu người khác quyết ngược lại thì model học sai cái gì:
 
-### Ca 2 - ảnh `______`, người thứ `___`, khớp `______`
+### Ca 2 - ảnh
 
 - Mơ hồ ở chỗ nào:
 - Bạn quyết thế nào:
 - Vì sao:
 - Nếu người khác quyết ngược lại thì model học sai cái gì:
 
-### Ca 3 - ảnh `______`, người thứ `___`, khớp `______`
+### Ca 3 - ảnh
 
 - Mơ hồ ở chỗ nào:
 - Bạn quyết thế nào:
 - Vì sao:
 - Nếu người khác quyết ngược lại thì model học sai cái gì:
+-
 
 ## 4. Sau khi so visibility report với bạn cùng nhóm
 
